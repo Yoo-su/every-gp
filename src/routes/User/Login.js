@@ -43,7 +43,7 @@ export default function Login(){
                            localStorage.setItem('userNick',res.data.nickName);
                            localStorage.setItem('role',res.data.role);
                            alert('로그인 성공');
-                           window.location.href = '/';
+                           window.location.href = '/every-gp';
                        }else{alert('입력 정보를 확인해주세요')}
                    })
                 }}>로그인</Button><br></br>
