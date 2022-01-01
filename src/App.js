@@ -57,7 +57,7 @@ function mapStateToProps(state){
     };
 }
 
-function mapDispatchToProps(dispatch,ownProps){
+function mapDispatchToProps(dispatch, ownProps){
   return{
     login:()=>{dispatch(logIn())},
     logout:()=>{dispatch(logOut())}
