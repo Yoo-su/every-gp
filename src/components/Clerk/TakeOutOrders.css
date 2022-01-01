@@ -1,0 +1,12 @@
+#takeOuts{
+    margin:15px;
+    border-radius: 10px;
+    box-shadow: 3px 3px gray;
+    cursor:pointer;
+}
+
+#takeOuts:hover{
+    transform:scale(1.1);
+    transition-duration:0.3s;
+    transition-timing-function:ease-in-out;
+}
