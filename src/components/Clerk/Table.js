@@ -3,6 +3,11 @@ import {Button, Modal,Alert,Spinner} from "react-bootstrap";
 import axios from "axios";
 import io from 'socket.io-client';
 import {btnStyle, alertStyle} from './Styles';
+import gorgon from '../../imgs/menuImgs/고르곤졸라.jpg';
+import carbo from '../../imgs/menuImgs/까르보나라.jpg';
+import riso from '../../imgs/menuImgs/리조또.jpg';
+import coffee from '../../imgs/menuImgs/커피.jpg';
+import toma from '../../imgs/menuImgs/토마토파스타.jpg';
 import "./Table.css";
 
 const Table=({tableId,empty,menu})=>{
@@ -14,6 +19,8 @@ const Table=({tableId,empty,menu})=>{
     const [addedContents,setAddedContents]=useState([]);
     const [totalPrice,setTotalPrice]=useState(0);
     const [addedPrice,setAddedPrice]=useState(0);
+    const [menuImgs,setMenuImgs]=useState([gorgon,carbo,riso,coffee,toma]);
+    let miidx=0;
 
     const [showOrderAlert,setOrderAlert]=useState(false);
     const [showPayAlert,setPayAlert]=useState(false);
@@ -242,7 +249,7 @@ const Table=({tableId,empty,menu})=>{
                 }
                 setAddedPrice(addedPrice+food.price);
             }}>
-                <img id="foodImg" src={food.imgPath} alt={food.id} style={{width:"70px",height:"70px",objectFit:'cover'}}></img><br></br>
+                <img id="foodImg" src={menuImgs[miidx++]} alt={food.id} style={{width:"70px",height:"70px",objectFit:'cover'}}></img><br></br>
                 <div  style={{display:'flex',flexDirection:'column',backgroundColor:"#F5F5F5",padding:'0.2rem 0.5rem',
             alignItems:'center',justifyContent:'center'}}>
                     <label style={{paddingTop:'3px'}}>{food.menuName}</label>
