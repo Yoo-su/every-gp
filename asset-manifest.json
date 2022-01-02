@@ -1,27 +1,32 @@
 {
   "files": {
     "main.css": "/every-gp/static/css/main.78de5407.chunk.css",
-    "main.js": "/every-gp/static/js/main.a6607ec0.chunk.js",
-    "main.js.map": "/every-gp/static/js/main.a6607ec0.chunk.js.map",
+    "main.js": "/every-gp/static/js/main.2a633652.chunk.js",
+    "main.js.map": "/every-gp/static/js/main.2a633652.chunk.js.map",
     "runtime-main.js": "/every-gp/static/js/runtime-main.ddfaa0f1.js",
     "runtime-main.js.map": "/every-gp/static/js/runtime-main.ddfaa0f1.js.map",
     "static/css/2.d9ad5f5c.chunk.css": "/every-gp/static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.f99b452b.chunk.js": "/every-gp/static/js/2.f99b452b.chunk.js",
-    "static/js/2.f99b452b.chunk.js.map": "/every-gp/static/js/2.f99b452b.chunk.js.map",
+    "static/js/2.ec73d1b0.chunk.js": "/every-gp/static/js/2.ec73d1b0.chunk.js",
+    "static/js/2.ec73d1b0.chunk.js.map": "/every-gp/static/js/2.ec73d1b0.chunk.js.map",
     "index.html": "/every-gp/index.html",
-    "precache-manifest.3c6984710f2df63911ffc3a840d037aa.js": "/every-gp/precache-manifest.3c6984710f2df63911ffc3a840d037aa.js",
+    "precache-manifest.e45fb1fcda94c0f503d3743022b8b7d8.js": "/every-gp/precache-manifest.e45fb1fcda94c0f503d3743022b8b7d8.js",
     "service-worker.js": "/every-gp/service-worker.js",
     "static/css/2.d9ad5f5c.chunk.css.map": "/every-gp/static/css/2.d9ad5f5c.chunk.css.map",
     "static/css/main.78de5407.chunk.css.map": "/every-gp/static/css/main.78de5407.chunk.css.map",
-    "static/js/2.f99b452b.chunk.js.LICENSE.txt": "/every-gp/static/js/2.f99b452b.chunk.js.LICENSE.txt",
+    "static/js/2.ec73d1b0.chunk.js.LICENSE.txt": "/every-gp/static/js/2.ec73d1b0.chunk.js.LICENSE.txt",
     "static/media/chefHat.png": "/every-gp/static/media/chefHat.d59a9e3f.png",
-    "static/media/mainBack.jpg": "/every-gp/static/media/mainBack.b848ff05.jpg"
+    "static/media/mainBack.jpg": "/every-gp/static/media/mainBack.b848ff05.jpg",
+    "static/media/고르곤졸라.jpg": "/every-gp/static/media/고르곤졸라.ea978454.jpg",
+    "static/media/까르보나라.jpg": "/every-gp/static/media/까르보나라.c29112e7.jpg",
+    "static/media/리조또.jpg": "/every-gp/static/media/리조또.b70afec2.jpg",
+    "static/media/커피.jpg": "/every-gp/static/media/커피.2b7f6ca9.jpg",
+    "static/media/토마토파스타.jpg": "/every-gp/static/media/토마토파스타.d0b614ec.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.ddfaa0f1.js",
     "static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.f99b452b.chunk.js",
+    "static/js/2.ec73d1b0.chunk.js",
     "static/css/main.78de5407.chunk.css",
-    "static/js/main.a6607ec0.chunk.js"
+    "static/js/main.2a633652.chunk.js"
   ]
 }
