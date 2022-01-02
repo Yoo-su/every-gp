@@ -1,9 +1,9 @@
-#navtexts{
+.HomeNav{
     font-size:14px;
 }
 
 @media (min-width:800px){
-    #navtexts{
+    .HomeNav{
         font-size:22px;
     }
 }

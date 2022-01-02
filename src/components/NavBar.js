@@ -46,7 +46,7 @@ function NavBar({userRole,isLogin,logOut,curUser}){
              alt="mainlogo">
              </img>{' '}에브리 레스토랑</label>
          </Navbar.Brand>
-         <Nav className="mr-auto" id="navtexts">
+         <Nav className="mr-auto">
              {userRole===0?(<>
               <Nav.Link href="#Order">주문</Nav.Link>
               <Nav.Link href="#Cook">요리</Nav.Link>
