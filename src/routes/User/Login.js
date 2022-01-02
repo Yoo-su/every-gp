@@ -25,12 +25,12 @@ export default function Login(){
 
                 <div className="form-group" style={{marginBottom:"25px"}}>
            
-                    <input type="email" className="form-control" placeholder="Email .." onChange={handleEmail}/>
+                    <input type="email" className="form-control" placeholder="user@naver.com 을 입력하세요" onChange={handleEmail}/>
                 </div>
                
                 <div className="form-group" style={{marginBottom:"25px"}}>
                  
-                    <input type="password" className="form-control" placeholder="Password .." onChange={handlePW}/>
+                    <input type="password" className="form-control" placeholder="user 을 입력하세요" onChange={handlePW}/>
                 </div>
 
                 <Button style={{width:"100%",backgroundColor:"#00B0FF",borderColor:"#00B0FF"}} onClick={()=>{
