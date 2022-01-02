@@ -1,0 +1,9 @@
+#navtexts{
+    font-size:14px;
+}
+
+@media (min-width:800px){
+    #navtexts{
+        font-size:22px;
+    }
+}

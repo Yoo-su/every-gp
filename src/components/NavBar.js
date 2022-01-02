@@ -3,6 +3,7 @@ import {Navbar, Nav,Button} from 'react-bootstrap';
 import { connect } from 'react-redux';
 import axios from "axios";
 import {logOut} from "../Store";
+import './NavBar.css';
 import logo from "../icons/hat.png";
 
 function NavBar({userRole,isLogin,logOut,curUser}){
@@ -45,7 +46,7 @@ function NavBar({userRole,isLogin,logOut,curUser}){
              alt="mainlogo">
              </img>{' '}에브리 레스토랑</label>
          </Navbar.Brand>
-         <Nav className="mr-auto" style={{fontSize:"22px"}}>
+         <Nav className="mr-auto" id="navtexts">
              {userRole===0?(<>
               <Nav.Link href="#Order">주문</Nav.Link>
               <Nav.Link href="#Cook">요리</Nav.Link>
