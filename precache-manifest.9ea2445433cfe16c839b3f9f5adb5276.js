@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1ef212994ad9cd2d898eea0fd73f7af8",
+    "revision": "7a845a3ed32437151b1c2e0473229be7",
     "url": "/every-gp/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/every-gp/static/css/2.d9ad5f5c.chunk.css"
   },
   {
-    "revision": "0716f2d216bec497223d",
+    "revision": "a3b04255b434df3b7e52",
     "url": "/every-gp/static/css/main.55ab5538.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/every-gp/static/js/2.bfa7cc29.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0716f2d216bec497223d",
-    "url": "/every-gp/static/js/main.051507b7.chunk.js"
+    "revision": "a3b04255b434df3b7e52",
+    "url": "/every-gp/static/js/main.021a69c2.chunk.js"
   },
   {
     "revision": "b8d5ef450f47848e2cf3",
@@ -34,25 +34,5 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b848ff05a41feb7f79229f63a3c9cbfd",
     "url": "/every-gp/static/media/mainBack.b848ff05.jpg"
-  },
-  {
-    "revision": "ea978454146f77a116c350ccbc076321",
-    "url": "/every-gp/static/media/고르곤졸라.ea978454.jpg"
-  },
-  {
-    "revision": "c29112e71d18d6f1eafaad20b840df2a",
-    "url": "/every-gp/static/media/까르보나라.c29112e7.jpg"
-  },
-  {
-    "revision": "b70afec23c8b0a80edb87ac14f2ec7f7",
-    "url": "/every-gp/static/media/리조또.b70afec2.jpg"
-  },
-  {
-    "revision": "2b7f6ca915d73b9f1f8bd46ca321981e",
-    "url": "/every-gp/static/media/커피.2b7f6ca9.jpg"
-  },
-  {
-    "revision": "d0b614ec24215da109666bb4a70366d7",
-    "url": "/every-gp/static/media/토마토파스타.d0b614ec.jpg"
   }
 ]);
