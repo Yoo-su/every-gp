@@ -3,7 +3,12 @@ import {Button, Modal,Alert} from "react-bootstrap";
 import axios from 'axios';
 import io from 'socket.io-client';
 import {btnStyle, alertStyle } from './Styles';
-import "./TakeOut.css";
+import gorgon from '../../imgs/menuImgs/고르곤졸라.jpg';
+import carbo from '../../imgs/menuImgs/까르보나라.jpg';
+import riso from '../../imgs/menuImgs/리조또.jpg';
+import coffee from '../../imgs/menuImgs/커피.jpg';
+import toma from '../../imgs/menuImgs/토마토파스타.jpg';
+import "./Table.css";
 
 const TakeOutOrder=({tableId,menu})=>{
     const [show,setShow]=useState(false);
@@ -12,7 +17,9 @@ const TakeOutOrder=({tableId,menu})=>{
     const [addedContents,setAddedContents]=useState([]);
     const [totalPrice,setPrice]=useState(0);
     const [addedPrice,setAddedPrice]=useState(0);
-
+    const [menuImgs,setMenuImgs]=useState([gorgon,carbo,riso,coffee,toma]);
+    let miidx=0;
+    
     const [showOrderAlert,setOrderAlert]=useState(false);
     const [showPayAlert,setPayAlert]=useState(false);
     const [showCancleAlert,setCancleAlert]=useState(false);
@@ -69,18 +76,17 @@ const TakeOutOrder=({tableId,menu})=>{
         </Modal.Header>
 
         <Modal.Body>
-         <div id="modalContent" style={{display:"flex",flexDirection:"row"}}>
-         <div className="selectedFoods" style={{width:"50%",marginRight:"5px",border:"1px solid #EBECF0", 
-                boxShadow:"1px 2px #BEBEBE", borderRadius:"5px"}}>
-                    <h2 style={{textAlign:"center",borderBottom:"1px solid #949494"}}>주문 리스트</h2>
+         <div id="modalContent">
+         <div className="selectedFoods">
+                    <h2>주문 리스트</h2>
            {tableEmpty===true?(
-               <div style={{display:"flex",flexDirection:"column"}}>
+               <div className="orderList">
                      {addedContents.map(food=>(
-                    <div key={Math.random()} style={{display:"flex",alignItems:"center", marginLeft:"5px",marginRight:"5px", color:"#7E7E7E"}}>
+                    <div className="anOrderItem" key={Math.random()}>
                         <b style={{flexBasis:"130px"}}>{food.menuName}</b>
                         <b style={{flexGrow:"1"}}>수량: {food.count}</b>
                         <b style={{flexGrow:"1"}}>가격: {food.price}</b>
-                        <b style={{backgroundColor:"transparent", border:"0",outline:"0",cursor:"pointer" }} onClick={()=>{
+                        <b style={{backgroundColor:"transparent",color:"#BC544B", border:"0",outline:"0",cursor:"pointer" }} onClick={()=>{
                             setAddedContents(addedContents.filter(cur=>cur.key!==food.key));
                             setAddedPrice(addedPrice-food.price);
                             }}>x</b>
@@ -88,7 +94,7 @@ const TakeOutOrder=({tableId,menu})=>{
               ))}
                </div>
            ):(
-                <div style={{display:"flex",flexDirection:"column"}}>
+                <div>
                     {orderContents.map(food=>(
                     <div key={Math.random()} style={{display:"flex",alignItems:"center", marginLeft:"5px",marginRight:"5px"}}>
                         <b style={{flexBasis:"130px"}}>{food.menuName}</b>
@@ -97,11 +103,11 @@ const TakeOutOrder=({tableId,menu})=>{
              </div>
               ))}
                 {addedContents.map(food=>(     
-                         <div key={Math.random()} id={food.id} style={{display:"flex",alignItems:"center", marginLeft:"5px",marginRight:"5px", color:"#7E7E7E"}}>
+                         <div className="anOrderItem" key={Math.random()} id={food.id}>
                          <b style={{flexBasis:"130px"}}>{food.menuName}</b>
                          <b style={{flexGrow:"1"}}>수량: {food.count}</b>
                          <b style={{flexGrow:"1"}}>가격: {food.price}</b>
-                         <b style={{backgroundColor:"transparent", border:"0",outline:"0",cursor:"pointer" }} onClick={()=>{
+                         <b style={{backgroundColor:"transparent",color:"#BC544B", border:"0",outline:"0",cursor:"pointer" }} onClick={()=>{
                              setAddedContents(addedContents.filter(cur=>cur.key!==food.key));
                              setAddedPrice(addedPrice-food.price);
                          }}>x</b>
@@ -110,26 +116,24 @@ const TakeOutOrder=({tableId,menu})=>{
                </div>
                
            )}
-              <div id="total" style={{textAlign:"center",float:"bottom" }}>
-                  <b style={{fontSize:'24px'}}>합계: {tableEmpty===true?(addedPrice):(totalPrice+addedPrice)}원</b><br></br>
+              <div id="total">
+                  <b>합계: {tableEmpty===true?(addedPrice):(totalPrice+addedPrice)}원</b><br></br>
              </div>
          </div>
 
-         <div className="servingFoods" style={{width:"50%",marginLeft:"5px",border:"1px solid #EBECF0", 
-                boxShadow:"1px 2px #BEBEBE", borderRadius:"5px"}}>
-             <h2 style={{textAlign:"center",borderBottom:"1px solid #949494"}}>메뉴</h2>
-             <div style={{margin:"8px",textAlign:"center",position:"relative"}}>
+         <div className="servingFoods">
+             <h2>메뉴</h2>
+             <div>
              {menu.map(food=>{
             return orderContents.length>0?(
-            <button key={Math.random()} id={food.menuName} style={{backgroundColor:"white",border:"0", 
-                outline:"0",boxShadow:"0.5px 1px #BEBEBE", borderRadius:"5px" , margin:"2px", padding:"0"}} 
+            <button className="menuBtn" key={Math.random()} id={food.menuName} 
                 onClick={()=>{
                 alert('결제를 진행해 주세요');
                 }}>
-            <img id="foodImg" src={food.imgPath} alt={food.id} style={{width:"70px",height:"70px"}}></img><br></br>
-            <div  style={{backgroundColor:"#F5F5F5", padding:"5px"}}>
-                    <b>{food.menuName}</b><br></br>
-                    <label>{food.price}원</label>
+            <img className="foodImg" src={menuImgs[miidx++]} alt={food.id}></img><br></br>
+            <div className='foodInfo'>
+                    <label style={{paddingTop:'3px'}}><b>{food.menuName}</b></label>
+                    <label style={{justifyContent:'center'}}>{food.price}원</label>
                 </div>
             </button>
             ):(
@@ -153,10 +157,10 @@ const TakeOutOrder=({tableId,menu})=>{
                     }
                    setAddedPrice(addedPrice+food.price);
                 }}>
-                <img id="foodImg" src={food.imgPath} alt={food.id} style={{width:"70px",height:"70px"}}></img><br></br>
-                <div  style={{backgroundColor:"#F5F5F5", padding:"5 px"}}>
-                    <b>{food.menuName}</b><br></br>
-                    <label>{food.price}원</label>
+                <img className="foodImg" src={menuImgs[miidx++]} alt={food.id} loading='lazy'></img><br></br>
+                <div className='foodInfo'>
+                    <label style={{paddingTop:'3px'}}><b>{food.menuName}</b></label>
+                    <label style={{justifyContent:'center'}}>{food.price}원</label>
                 </div>
                 </button>)
                  } )}

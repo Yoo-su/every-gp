@@ -36,10 +36,9 @@ function NavBar({userRole,isLogin,logOut,curUser}){
 
   return(
     <div id="NavBar">
-    <Navbar className="HomeNav" style={{backgroundColor:"#F6F3ED",height:'4rem', 
-    color:'#030303',boxShadow:'1px 1px #C5C6D0'}}>
+    <Navbar className="HomeNav">
          <Navbar.Brand href="#" style={{paddingBottom:"0px"}}>
-             <label style={{fontSize:"32px",margin:"0px",cursor:'pointer',color:'#030303'}}><img 
+             <label id="mainTitle"><img 
              src={logo}
              width="34"
              height="34"
@@ -76,18 +75,13 @@ function NavBar({userRole,isLogin,logOut,curUser}){
              </>):(<></>)}
         </Nav>
         
-        <div style={{background:'white',padding:'1px 3px', marginRight:'30px',borderRadius:'10px',color:'#494848',boxShadow:'0.3px 0.5px gray'}}>
-          <label style={{fontSize:'20px',margin:'0px 12px'}}>{date+' '+time}</label>
+        <div id="dateDiv">
+          <label id="dateLabel">{date+' '+time}</label>
         </div>
         {isLogin===true?(
-        <div style={{
-          display:'flex',
-          alignContent:'center',
-          padding:'0.5rem 1rem',
-          height:'3rem',
-          }}>
-        <p style={{fontSize:"20px",marginRight:'12px'}}>{curUser} 님</p>
-         <p onClick={()=>{
+        <div id="userInfo">
+        <p id="userName">{curUser} 님</p>
+         <p id="logoutBtn" onClick={()=>{
            function logout(){
              axios.get('https://every-server.herokuapp.com/api/logout',{params:{nickName:curUser}}).then(res=>{
                if(res.data.success===true){
@@ -98,7 +92,6 @@ function NavBar({userRole,isLogin,logOut,curUser}){
            logout();
            logOut();
          }}
-         style={{cursor:'pointer',color:'#BC544B',paddingTop:'3px'}}
          >로그아웃</p>
         </div>):(
             <Nav className="sign">
