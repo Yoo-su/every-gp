@@ -249,7 +249,7 @@ const Table=({tableId,empty,menu})=>{
                 }
                 setAddedPrice(addedPrice+food.price);
             }}>
-                <img id="foodImg" src={menuImgs[miidx++]} alt={food.id} style={{width:"70px",height:"70px",objectFit:'cover'}}></img><br></br>
+                <img id="foodImg" src="" alt={food.id} style={{width:"70px",height:"70px",objectFit:'cover'}}></img><br></br>
                 <div  style={{display:'flex',flexDirection:'column',backgroundColor:"#F5F5F5",padding:'0.2rem 0.5rem',
             alignItems:'center',justifyContent:'center'}}>
                     <label style={{paddingTop:'3px'}}>{food.menuName}</label>
