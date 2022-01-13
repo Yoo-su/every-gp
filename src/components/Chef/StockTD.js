@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import {Button} from 'react-bootstrap';
 import axios from "axios";
+import "./StockTD.css";
 
 function StockTD({menuName,stockRemain,stockPrice}){
   const [amount,setAmount]=useState(stockRemain);
@@ -14,9 +15,12 @@ function StockTD({menuName,stockRemain,stockPrice}){
    return(
      <>
       {!stockInput?(<>
-         {amount}개&nbsp;<Button variant="info" size="sm" onClick={()=>{setStockInput(!stockInput);}}>추가</Button>
+         {amount}개&nbsp;<button className="addStockBtn" variant="info" size="sm" onClick={()=>{setStockInput(!stockInput);}}>
+           +</button>
       </>):(<>
-        <input type="number" placeholder="추가할 수량 입력.." onChange={handleAmountChange}></input>&nbsp;<Button size="sm" onClick={()=>{
+        <input type="number" placeholder="추가할 수량 입력.." onChange={handleAmountChange}>
+          </input>&nbsp;
+          <button className="cmpAddStockBtn" onClick={()=>{
           function fillStock(){
             if(newAmount<0)alert('추가 수량을 확인해주세요');
             else{
@@ -31,9 +35,9 @@ function StockTD({menuName,stockRemain,stockPrice}){
           fillStock();
           setNewAmount(0);
           setStockInput(!stockInput);
-        }}>완료</Button>&nbsp;<Button size="sm" variant='secondary' onClick={()=>{
+        }}>완료</button>&nbsp;<button className="cancleAddBtn" size="sm" variant='secondary' onClick={()=>{
             setStockInput(!stockInput);
-        }}>취소</Button>
+        }}>취소</button>
       </>)}
      </>
  );

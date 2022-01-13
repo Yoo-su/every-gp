@@ -1,14 +1,15 @@
 import React,{useState} from 'react';
 import {Card,Button} from 'react-bootstrap';
 import axios from 'axios';
+import "./MenuCard.css";
 
 function MenuCard({activate,showBtn,menuName,imgPath,price,sales,remain}){
     const [acti,setActi]=useState(activate);
     
-    const card1=<Card border="gray" style={{margin:"20px", width:"200px", display:"inline-block"}}>
-                 <Card.Img variant="top" src={imgPath} style={{width:"150px",height:"150px",objectFit:'cover'}}></Card.Img>
+    const card1=<Card className="card1" border="gray">
+                 <Card.Img variant="top" src={imgPath}></Card.Img>
                 <Card.Body>
-                <Card.Title>{menuName}</Card.Title>
+                <Card.Title className="card_menuName">{menuName}</Card.Title>
                  <Card.Text>
                  {price}원 <br></br>
                  누적판매량: <b>{sales}</b> <br></br>
@@ -26,10 +27,10 @@ function MenuCard({activate,showBtn,menuName,imgPath,price,sales,remain}){
                  </Card.Text>
                  </Card.Body>
                  </Card>;
-    const card2= <Card border="gray" style={{margin:"20px",zIndex:"1", width:"200px", display:"inline-block"}}>
-                  <Card.Img variant="top" src={imgPath} style={{width:"150px",height:"150px",opacity:"0.5"}}></Card.Img>
+    const card2= <Card className="card2" border="gray">
+                  <Card.Img variant="top" src={imgPath}></Card.Img>
                   <Card.Body>
-                   <Card.Title style={{opacity:"0.5"}}>{menuName}</Card.Title>
+                   <Card.Title className="card_menuName" style={{opacity:"0.5"}}>{menuName}</Card.Title>
                    <Card.Text>
                     <span style={{opacity:"0.5"}}>
                     {price}원 <br></br>

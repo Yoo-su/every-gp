@@ -57,7 +57,7 @@ function Manage(){
                       wage:ant.hourWage,
                       email:ant.userEmail
                     }
-                    }}><Button variant='warning' size="sm">관리</Button></Link></td>
+                    }}><button className="manageEmpBtn">상세정보 조회</button></Link></td>
                  </tr>))}
               </tbody>
           </Table>

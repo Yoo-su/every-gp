@@ -26,7 +26,7 @@
     justify-content: center;
 }
 
-@media all and (min-width:0px) and (max-width:1000px){
+@media all and (min-width:0px) and (max-width:1280px){
   #cookPage{
     top:53px;
     margin-top:0;

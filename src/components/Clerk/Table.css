@@ -13,6 +13,11 @@
     text-align: center;
     box-shadow: 3px 3px #524539;
 }
+#tableBtn:hover{
+  transform:scale(1.1);
+  transition-duration:3s;
+  transition-timing-function:ease-in-out;
+}
 
 #takeOutBtn{
   position:relative;

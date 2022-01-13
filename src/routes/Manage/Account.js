@@ -22,13 +22,13 @@ function Account(){
         <div id="accountPage">
             <div id="accountContent">
              <div id="accountTitle">
-               <b style={{fontSize:"35px"}}>회계정보</b>
+               <b>회계정보</b>
             </div>
-            <div style={{fontSize:"18px",marginBottom:"5px",float:"right",color:"#2F66A9"}}> 
+            <div id="pureProfit"> 
             <b>●이번달 순이익:&nbsp;{monthly}&nbsp;원</b>
             </div>
           <div>
-          <Table striped bordered hover>
+          <Table id="accountTable" striped bordered hover>
               <thead>
                <tr>
                 <th>날짜</th>

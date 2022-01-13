@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import {Button,Table} from 'react-bootstrap';
+import {button,Table} from 'react-bootstrap';
 import axios from 'axios';
 import EmpWarning from '../../components/Master/EmpWarning';
 import "./ManageEmp.css";
@@ -47,10 +47,10 @@ function ManageEmp({location}){
         <div id="Content">
             <div id="empDetailTitle">
               <b>직원명: {emp.name}</b>
-              <Button variant="secondary" style={{float:"right",marginLeft:"5px"}} onClick={()=>{window.location.href="#ManageEmp"}}>돌아가기</Button>
-              <Button variant="danger" style={{float:"right"}} onClick={()=>{
+              <button className="gobackBtn" style={{float:"right",marginLeft:"5px"}} onClick={()=>{window.location.href="#ManageEmp"}}>돌아가기</button>
+              <button className="removeEmpBtn" style={{float:"right",backgroundColor:"#B90E0A",color:"white"}} onClick={()=>{
                   setWarningModal(true);
-              }}>삭제</Button>
+              }}>삭제</button>
               <EmpWarning show={warningModal} setShow={warningOff} userEmail={emp.email}></EmpWarning>
             </div>
           <br></br>
@@ -63,7 +63,7 @@ function ManageEmp({location}){
             {!showInput?(<>
             <b style={{borderBottom:"2px solid #99aab5"}}>●시급:</b>&nbsp;
               <input type="number" onChange={handleInput}></input>
-            &nbsp;<Button variant='info' onClick={()=>{
+            &nbsp;<button onClick={()=>{
               function updateSalary(){
                 axios.get('https://every-server.herokuapp.com/api/updateSalary',{params:{newSalary:newSalary,userEmail:emp.email}}).then(res=>{
                   if(res.data.success===true){
@@ -79,17 +79,17 @@ function ManageEmp({location}){
               setShowInput(!showInput);
               setSalary(newSalary);
               setNewSalary(0);}
-            }}>적용</Button>&nbsp;
-            <Button variant='secondary' onClick={()=>{
+            }}>적용</button>&nbsp;
+            <button onClick={()=>{
               setShowInput(!showInput);
-            }}>취소</Button><br></br>
+            }}>취소</button><br></br>
             </>):(<>
               <label style={{borderBottom:"2px solid #99aab5"}}>●시급: {salary}원</label>
-              <Button variant="warning" size="sm" style={{marginLeft:"20px",paddingBottom:"5px"}} onClick={()=>{setShowInput(!showInput)}}>시급변경</Button>
+              <button className="alterWageBtn" style={{marginLeft:"20px",paddingBottom:"5px",backgroundColor:'#FFDB58'}} onClick={()=>{setShowInput(!showInput)}}>시급변경</button>
             <br></br></>)}
           </span>
             <label style={{borderBottom:"2px solid #99aab5"}}>●지불할 임금 액수: {payPrice}원</label>
-            <Button variant="warning" size="sm" style={{marginLeft:"20px",paddingBottom:"5px"}} onClick={()=>{
+            <button className="payWageBtn" style={{marginLeft:"20px",paddingBottom:"5px",backgroundColor:'#FFDB58'}} onClick={()=>{
               function payforWage(){
                 axios.get('https://every-server.herokuapp.com/api/payForWage',{params:{userEmail:emp.email,payPrice:payPrice}}).then(res=>{
                   if(res.data.success===true){
@@ -100,12 +100,12 @@ function ManageEmp({location}){
               }
               payforWage();
               setWorkInfo([]);
-            }}>지불</Button>
+            }}>지불</button>
           </div>
           {workInfo.length>0?(
           <div id="workHistory">
-            <label style={{fontSize:"25px",borderBottom:"2px solid #99aab5",color:"#2F66A9"}}>●근무 기록</label>
-            <Table striped bordered hover>
+            <label style={{fontSize:"24px",borderBottom:"2px solid #99aab5",color:"#2F66A9"}}>●근무 기록</label>
+            <Table className="workHistTable" striped bordered hover>
             <thead>
                <tr>
                 <th>-</th>
@@ -124,7 +124,7 @@ function ManageEmp({location}){
                  </tr>))}
               </tbody>
             </Table>
-          </div>):(<><label style={{fontSize:"25px",borderBottom:"2px solid #99aab5",color:"#2F66A9"}}>●근무 기록 없음</label></>)}
+          </div>):(<><label style={{fontSize:"24px",borderBottom:"2px solid #99aab5",color:"#2F66A9"}}>●근무 기록 없음</label></>)}
           </div>
     </div>
    );

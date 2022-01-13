@@ -18,9 +18,9 @@ function ManageStock(){
     return(
         <div id="stockPage">
             <div id="stockPageTitle">
-            <b style={{fontSize:"35px"}}>재고관리</b>
+            <b>재고관리</b>
             </div><br></br>
-           <Table striped bordered hover>
+           <Table id="stockTable" striped bordered hover>
               <thead>
                <tr>
                 <th>-</th>
