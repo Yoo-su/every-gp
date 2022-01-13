@@ -28,7 +28,9 @@
 
 @media all and (min-width:0px) and (max-width:1000px){
   #cookPage{
-    padding:0px;
+    top:53px;
+    margin-top:0;
+    padding:0;
   }
 
   #cookTitle{
