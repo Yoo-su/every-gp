@@ -34,41 +34,37 @@ function TakeOutOrders({orderId,state,price}){
     }
 
     const cookingStyle={
-      width:'9rem',
-      height:'13rem',
     }
 
     const preparedStyle={
-      width:'9rem',
-      height:'13rem',
       border:'3px solid #668D3C',
     }
     const applyStyle=orderState==="cooking"?cookingStyle:preparedStyle;
 
     return(
         <div id="takeOuts">
-          <Card style={applyStyle} onClick={detailOnOff}>
-            <Card.Header style={{maxHeight:"40px", fontSize:"14px"}}><b>주문번호: {orderId}</b></Card.Header>
-             <Card.Body style={{padding:"0.5rem"}}>
+          <Card className="orderCard_Clerk" style={applyStyle} onClick={detailOnOff}>
+            <Card.Header><b>주문번호: {orderId}</b></Card.Header>
+             <Card.Body>
               <Card.Text>
                 {content.length>3?(
-                    <div style={{display:"flex",flexDirection:"column"}}>
-                      <label style={{fontSize:"14px"}}>{content[0].menu_menuName} X {content[0].count}</label>
-                      <label style={{fontSize:"14px"}}>{content[1].menu_menuName} X {content[1].count}</label>
+                    <span className="cardInfo" style={{display:"flex",flexDirection:"column"}}>
+                      <label>{content[0].menu_menuName} X {content[0].count}</label>
+                      <label>{content[1].menu_menuName} X {content[1].count}</label>
                       <label>외 {content.length-2}</label>
-                    </div>
+                    </span>
                 ):(
-                    <>
+                    <span>
                     {content.map(food=>(
-                        <div key={Math.random()} style={{display:"flex",flexDirection:"column"}}>
-                         <label style={{fontSize:"14px"}}>{food.menu_menuName} X {food.count}</label>
-                        </div>
+                        <span className="cardInfo" key={Math.random()} style={{display:"flex",flexDirection:"column"}}>
+                         <label>{food.menu_menuName} X {food.count}</label>
+                        </span>
                        ))}
-                    </>
+                    </span>
                 )}
               </Card.Text>
              </Card.Body>
-            <Card.Footer style={{padding:"0.5rem"}}>
+            <Card.Footer>
               {orderState==="cooking"?(
                   <div>
                       준비중..<br></br>

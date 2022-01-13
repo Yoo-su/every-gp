@@ -155,7 +155,7 @@
     font-size: 10px;
 }
 
-@media all and (min-width:0px) and (max-width:1280px){
+@media all and (min-width:0px) and (max-width:1000px){
   #tableBtn{
       position:relative;
       margin-top:20px;
@@ -170,6 +170,12 @@
       font-size:12px;
   }
 
+  #takeOutBtn{
+    width:120px;
+    height:50px;
+    border-radius: 15px;
+    font-size:12px;
+  }
   #curState1,#curState2,#curState3{
     border-radius:30px;
     margin-top:10px;
@@ -201,6 +207,7 @@
   }
   .foodInfo label{
     font-size:12px;
+    height:0.7rem;
   }
   #modal-foot button{
     font-size:14px;

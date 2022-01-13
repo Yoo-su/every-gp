@@ -25,3 +25,17 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+@media all and (min-width:0px) and (max-width:1000px){
+  #cookPage{
+    padding:0px;
+  }
+
+  #cookTitle{
+    padding-bottom:0px;
+  }
+
+  #cookTitle > b{
+    font-size:24px;
+  }
+}
