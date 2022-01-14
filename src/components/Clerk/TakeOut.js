@@ -46,7 +46,6 @@ const TakeOutOrder=({tableId,menu})=>{
   
  
      const afterPay=()=>{
-        socket.emit('orderEvent',{what:'takeOutOrder'});
          setTimeout(()=>{
              setOrderContents([]);
              setAddedContents([]);
@@ -194,11 +193,12 @@ const TakeOutOrder=({tableId,menu})=>{
                 function newOrder(){
                     const orderData={
                         tableId:tableId,
-                        content:addedContents,
-                        total:addedPrice
+                        content:orderContents,
+                        total:totalPrice,
                     }
                     axios.post("https://every-server.herokuapp.com/api/newOrder",orderData).then(res=>{
                         if(res.data.success===true)console.log('테이크아웃 주문 완료');
+                        socket.emit('orderEvent',{what:'takeOutOrder'});
                     });
                 }
                 newOrder();
