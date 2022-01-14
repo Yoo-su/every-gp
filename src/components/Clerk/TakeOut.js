@@ -182,17 +182,6 @@ const TakeOutOrder=({tableId,menu})=>{
                        alert("선택된 음식이 없습니다");
                    }
                    else{
-                    function newOrder(){
-                        const orderData={
-                            tableId:tableId,
-                            content:addedContents,
-                            total:addedPrice
-                        }
-                        axios.post("https://every-server.herokuapp.com/api/newOrder",orderData).then(res=>{
-                            if(res.data.success===true)console.log('테이크아웃 주문 완료');
-                        });
-                    }
-                    newOrder();
                     setPrice(addedPrice);
                     setAddedPrice(0);
                     afterOrder();
@@ -202,6 +191,17 @@ const TakeOutOrder=({tableId,menu})=>{
             }}>주문</button>)):(<></>)}
 
             {!tableEmpty&&addedContents.length===0?(<button style={btnStyle('#B90E0A')} onClick={()=>{
+                function newOrder(){
+                    const orderData={
+                        tableId:tableId,
+                        content:addedContents,
+                        total:addedPrice
+                    }
+                    axios.post("https://every-server.herokuapp.com/api/newOrder",orderData).then(res=>{
+                        if(res.data.success===true)console.log('테이크아웃 주문 완료');
+                    });
+                }
+                newOrder();
                 setOrderAlert(false);
                 setPayAlert(true);
                 afterPay();
@@ -213,15 +213,6 @@ const TakeOutOrder=({tableId,menu})=>{
                  <b>주문을 삭제하시겠습니까?</b>
                  <p
                     onClick={()=>{
-                        function orderCancle(){
-                            axios.get('https://every-server.herokuapp.com/api/orderCancle',{params:{tableId:tableId}}).then(res=>{
-                                if(res.data.success===true){
-                                    console.log('주문취소 성공, 취소 이벤트 전송');
-                                    socket.emit('orderEvent',{what:'cancle',tableId:tableId});
-                                }else{alert('취소실패');}
-                                })
-                            }
-                            orderCancle();
                             handleHide();
                             resetOrder();
                         }}
