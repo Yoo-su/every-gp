@@ -17,17 +17,11 @@ function Cook(){
   useEffect(()=>{ //첫 마운트때 딱 한번
     bringOrders();
 
-    socket.on('aboutAllOrder',(data)=>{
-      if(data.what==='newOrderForCook'){
+    socket.on('aboutOrder_chef',(data)=>{
         setOrders(data.order);
-      }
-    })
-    socket.on('cookAlertForChef',(data)=>{
-      setOrders(data.order);
     })
 
     return ()=>{
-      socket.off('aboutAllOrder');
       socket.off('cookAlertForChef');
     }
   },[]);

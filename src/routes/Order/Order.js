@@ -36,15 +36,13 @@ function Order(){
       if(data.what==='updateOrderForClerk'){
         setTakeOutOrders(data.takeOutOrders);
       }
-    })
-
-    socket.on('removeCard',(data)=>{
-      setTakeOutOrders(data.takeOutOrders);
+      else if (data.what==='removeCard'){
+        setTakeOutOrders(data.takeoutOrders);
+      }
     })
     
     return ()=>{
       socket.off('aboutTakeOut');
-      socket.off('removeCard');
     }
   },[]);
 
