@@ -53,13 +53,11 @@ const Table=({tableId,empty,menu})=>{
         if(tableEmpty===false){
             bringTableInfo();
            }
-        socket.on('tablePrepared',(data)=>{
-            if(data.tableId===tableId){
+        socket.on('aboutTable',(data)=>{
+            if (data.what==='orderReady' && data.tableId===tableId){
                 setOrderState("prepared");
             }
-          })
-        socket.on('aboutTable',(data)=>{
-            if(data.what==='three'&&Number(data.tableId)===tableId){
+            else if(data.what==='three'&&Number(data.tableId)===tableId){
                 console.log(data,'확인해보자');
                 applyInfo(data);
             }else if(data.what==='cancle'&&data.tableId===tableId){
@@ -71,7 +69,6 @@ const Table=({tableId,empty,menu})=>{
             }
         })
         return ()=>{
-            socket.off('tablePrepared');
             socket.off('aboutTable');
         }
     },[]);
