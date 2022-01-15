@@ -1,7 +1,6 @@
 import React, {useState,useEffect} from 'react';
 import {Button, Modal,Alert,Spinner} from "react-bootstrap";
 import axios from "axios";
-import io from 'socket.io-client';
 import {btnStyle, alertStyle} from './Styles';
 import gorgon from '../../imgs/menuImgs/고르곤졸라.jpg';
 import carbo from '../../imgs/menuImgs/까르보나라.jpg';
@@ -10,7 +9,7 @@ import coffee from '../../imgs/menuImgs/커피.jpg';
 import toma from '../../imgs/menuImgs/토마토파스타.jpg';
 import "./Table.css";
 
-const Table=({tableId,empty,menu})=>{
+const Table=({tableId,empty,menu,socket})=>{
     const [show,setShow]=useState(false);
     const [orderIds,setorderIds]=useState([]);
     const [tableEmpty,setTableEmpty]=useState(empty);
@@ -26,7 +25,6 @@ const Table=({tableId,empty,menu})=>{
     const [showPayAlert,setPayAlert]=useState(false);
     const [showCancleAlert,setCancleAlert]=useState(false);
     const [showAddAlert,setAddAlert]=useState(false);
-    const socket=io.connect('https://every-server.herokuapp.com',{ transports: ['websocket'] });
 
     function applyInfo(data){
         setTableEmpty(false);
