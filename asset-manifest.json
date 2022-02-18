@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/every-gp/static/css/main.2fc84013.chunk.css",
-    "main.js": "/every-gp/static/js/main.e000a0f3.chunk.js",
-    "main.js.map": "/every-gp/static/js/main.e000a0f3.chunk.js.map",
+    "main.css": "/every-gp/static/css/main.14311108.chunk.css",
+    "main.js": "/every-gp/static/js/main.1a752e5f.chunk.js",
+    "main.js.map": "/every-gp/static/js/main.1a752e5f.chunk.js.map",
     "runtime-main.js": "/every-gp/static/js/runtime-main.ddfaa0f1.js",
     "runtime-main.js.map": "/every-gp/static/js/runtime-main.ddfaa0f1.js.map",
     "static/css/2.d9ad5f5c.chunk.css": "/every-gp/static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.7087ba25.chunk.js": "/every-gp/static/js/2.7087ba25.chunk.js",
-    "static/js/2.7087ba25.chunk.js.map": "/every-gp/static/js/2.7087ba25.chunk.js.map",
+    "static/js/2.df66b954.chunk.js": "/every-gp/static/js/2.df66b954.chunk.js",
+    "static/js/2.df66b954.chunk.js.map": "/every-gp/static/js/2.df66b954.chunk.js.map",
     "index.html": "/every-gp/index.html",
-    "precache-manifest.436fd15edcbb63d0927d20df3cd86b0a.js": "/every-gp/precache-manifest.436fd15edcbb63d0927d20df3cd86b0a.js",
+    "precache-manifest.4c33afbc1e3239a931c3820a3fc6efe6.js": "/every-gp/precache-manifest.4c33afbc1e3239a931c3820a3fc6efe6.js",
     "service-worker.js": "/every-gp/service-worker.js",
     "static/css/2.d9ad5f5c.chunk.css.map": "/every-gp/static/css/2.d9ad5f5c.chunk.css.map",
-    "static/css/main.2fc84013.chunk.css.map": "/every-gp/static/css/main.2fc84013.chunk.css.map",
-    "static/js/2.7087ba25.chunk.js.LICENSE.txt": "/every-gp/static/js/2.7087ba25.chunk.js.LICENSE.txt",
+    "static/css/main.14311108.chunk.css.map": "/every-gp/static/css/main.14311108.chunk.css.map",
+    "static/js/2.df66b954.chunk.js.LICENSE.txt": "/every-gp/static/js/2.df66b954.chunk.js.LICENSE.txt",
     "static/media/chefHat.png": "/every-gp/static/media/chefHat.d59a9e3f.png",
-    "static/media/mainBack.jpg": "/every-gp/static/media/mainBack.b848ff05.jpg"
+    "static/media/mainBack2.jpg": "/every-gp/static/media/mainBack2.2585516b.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.ddfaa0f1.js",
     "static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.7087ba25.chunk.js",
-    "static/css/main.2fc84013.chunk.css",
-    "static/js/main.e000a0f3.chunk.js"
+    "static/js/2.df66b954.chunk.js",
+    "static/css/main.14311108.chunk.css",
+    "static/js/main.1a752e5f.chunk.js"
   ]
 }
