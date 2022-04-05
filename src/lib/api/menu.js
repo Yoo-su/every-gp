@@ -1,21 +1,21 @@
-import axios from "axios";
+import apiClient from "./client";
 
 export const newMenu=(formData)=>
-    axios.post("https://every-server.herokuapp.com/api/addMenu",formData)
+    apiClient.post("/menu/addMenu",formData)
 
 export const setMenuActivation=(menuName,type)=>
-    axios.get("https://every-server.herokuapp.com/api/menuActivate",
+    apiClient.put("/menu/menuActivate",
         { params: { menuName: menuName, activate: type } }
     )
 
 export const bringActivatedMenu=()=>
-    axios.get("https://every-server.herokuapp.com/api/menu")
+    apiClient.get("/menu/allActivatedMenu")
 
 export const bringAllMenu=()=>
-    axios.get("https://every-server.herokuapp.com/api/allMenu")
+    apiClient.get("/menu/allMenu")
 
 export const addMenuStock=(menuName, newAmount, stockPrice)=>
-    axios.get("https://every-server.herokuapp.com/api/fillStock", {
+    apiClient.get("/menu/fillStock", {
         params: {
             menuName: menuName,
             amount: parseInt(newAmount),

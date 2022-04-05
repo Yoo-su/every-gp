@@ -1,7 +1,7 @@
-import axios from "axios";
+import apiClient from "./client";
 
 export const fetchSalesInfo = () =>
-  axios.get("https://every-server.herokuapp.com/api/aboutSales");
+  apiClient.get("/store/sales");
 
 export const fetchAccountInfo=()=>
-  axios.get("https://every-server.herokuapp.com/api/account")
+  apiClient.get("/store/account")

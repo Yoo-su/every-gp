@@ -1,28 +1,28 @@
-import axios from 'axios';
+import apiClient from "./client";
 
 export const bringOrderDetail=(orderId)=>
-    axios.get("https://every-server.herokuapp.com/api/forOrderCard", {
+    apiClient.get("/order/orderInfo", {
         params: { orderId: orderId },
     });
 
 export const bringAllTables=()=>
-    axios.get("https://every-server.herokuapp.com/api/tables");
+    apiClient.get("/order/tables");
 
 export const bringTableInfo=(tableId)=>
-    axios.get("https://every-server.herokuapp.com/api/tableInfo", {
+    apiClient.get("/order/tableInfo", {
          params: { tableId: tableId },
     })
 
 export const enrollNewOrder=(orderData)=>
-    axios.post("https://every-server.herokuapp.com/api/newOrder",orderData)
+    apiClient.post("/order/newOrder",orderData)
 
 export const changeStateToServed=(tableId)=>
-    axios.get("https://every-server.herokuapp.com/api/served", {
+    apiClient.get("/order/served", {
             params: { tableId: tableId },
     })
 
 export const addOrder=(tableId,addedContents,addedPrice)=>
-    axios.post("https://every-server.herokuapp.com/api/addOrder",
+    apiClient.post("/order/newOrder",
         {
             tableId: tableId,
             content: addedContents,
@@ -31,7 +31,7 @@ export const addOrder=(tableId,addedContents,addedPrice)=>
     )
 
 export const payProcess=(tableId, orderContents, totalPrice, orderIds)=>
-    axios.post("https://every-server.herokuapp.com/api/orderPay",
+    apiClient.post("/order/payForOrder",
         {
             tableId: tableId,
             content: orderContents,
@@ -39,24 +39,24 @@ export const payProcess=(tableId, orderContents, totalPrice, orderIds)=>
             orderIds: orderIds,
         })
 
-export const orderCancle=(tableId)=>
-    axios.get("https://every-server.herokuapp.com/api/orderCancle",
+export const orderCancel=(tableId)=>
+    apiClient.get("/order/cancelOrder",
         { params: { tableId: tableId } })
 
 export const setOrderStateToPrepared=(orderId)=>
-    axios.get("https://every-server.herokuapp.com/api/cookComplete", {
+    apiClient.get("/order/orderPrepared", {
         params: { orderId: orderId },
     })
 
 export const terminateTakeoutOrder=(orderId,price,foods)=>
-    axios.post("https://every-server.herokuapp.com/api/takeOutEnd", {
+    apiClient.post("/order/recordTakeOut", {
         orderId: orderId,
         price: price,
         content: foods,})
 
 export const bringTakeoutOrderContent=(orderId)=>
-    axios.get("https://every-server.herokuapp.com/api/takeOutContent", {
+    apiClient.get("/order/takeOutContent", {
         params: { orderId: orderId },})
 
 export const bringTakeOutOrders = () =>
-  axios.get("https://every-server.herokuapp.com/api/takeOutOrders");
+  apiClient.get("/order/takeOutOrders");

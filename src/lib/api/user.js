@@ -1,7 +1,7 @@
-import axios from "axios";
+import apiClient from "./client";
 
 export const addNewWorker=(newEmail, newNickname,newPassword,newWage,newRole)=>
-    axios.post("https://every-server.herokuapp.com/api/newWorker", {
+    apiClient.post("/user/newEmp", {
         userEmail: newEmail,
         nickName: newNickname,
         password: newPassword,
@@ -10,30 +10,30 @@ export const addNewWorker=(newEmail, newNickname,newPassword,newWage,newRole)=>
     })
 
 export const removeEmployee=(userEmail)=>
-    axios.get("https://every-server.herokuapp.com/api/removeWorker", {
+    apiClient.get("/user/removeEmp", {
         params: { userEmail: userEmail },
     })
 
 export const userLogout=(curUser)=>
-    axios.get("https://every-server.herokuapp.com/api/logout", {
+    apiClient.get("/user/logout", {
         params: { nickName: curUser },
      })
 
 export const allEmployees=()=>
-    axios.get("https://every-server.herokuapp.com/api/allWorkers")
+    apiClient.get("/user/allEmp")
 
 export const employeeDetail=(emp)=>
-    axios.get("https://every-server.herokuapp.com/api/empDetail", {
+    apiClient.get("/user/empDetail", {
         params: { email: emp.email, wage: emp.wage },
     })
 
 export const workHistory=(emp)=>
-    axios.get("https://every-server.herokuapp.com/api/workHistory", {
+    apiClient.get("/user/workHistory", {
         params: { userEmail: emp.email },
     })
 
 export const updateSalary = (newSalary, emp) =>
-  axios.get("https://every-server.herokuapp.com/api/updateSalary", {
+  apiClient.get("/user/updateSalary", {
     params: {
       newSalary: newSalary,
       userEmail: emp.email,
@@ -41,6 +41,6 @@ export const updateSalary = (newSalary, emp) =>
   });
 
   export const paySalary = (emp, payPrice) =>
-    axios.get("https://every-server.herokuapp.com/api/payForWage", {
+    apiClient.get("/user/payForWage", {
       params: { userEmail: emp.email, payPrice: payPrice },
     });
